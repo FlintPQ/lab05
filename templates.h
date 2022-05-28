@@ -53,7 +53,7 @@ public:
 
     void push(T x){
         if (length() == len){
-            throw std::out_of_range("Roof is reached");
+            throw MyOutOfRange("Roof is reached");
         }
         head = (head + 1) % len;
         data[head] = x;
@@ -62,7 +62,7 @@ public:
     T pop(){
         int ri = tail;
         if (head == -1){
-            throw std::out_of_range("Floor is reached");
+            throw MyOutOfRange("Floor is reached");
         } else if (tail == head) {
             head = -1;
             tail = 0;
