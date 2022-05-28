@@ -10,6 +10,17 @@ void my_swap(T &a, T &b){
     b = buff;
 }
 
+class MyOutOfRange: public std::exception {
+private:
+    std::string message;
+ 
+public:
+    MyException(std::string error) : message(error){}
+ 
+    const char* what() const noexcept {
+        return m_error.c_str();
+    }
+};
 
 template<typename T, int N>
 class QQ{
