@@ -8,7 +8,7 @@ int main() {
 
     std::cout << a << ' ' << b << "\n";
 
-    QQ<int> quuu(5);
+    QQ<int, 5> quuu;
 
     std::cout << quuu.pop() << " popped" << '\n';
 

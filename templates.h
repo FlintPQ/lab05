@@ -5,11 +5,13 @@
 
 template<typename T>
 void my_swap(T &a, T &b){
-    std::swap(a, b);
+    T buff = a;
+    a = b;
+    b = buff;
 }
 
 
-template<typename T>
+template<typename T, int N>
 class QQ{
 private:
     T *data;
@@ -18,8 +20,7 @@ private:
     int len;
 
 public:
-    explicit QQ(int n): data(new T[n]), len(n){}
-    QQ() = delete;
+    QQ(): data(new T[N]), len(N){}
 
     int max_length(){
         return len;
